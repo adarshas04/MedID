@@ -15,14 +15,9 @@ import java.util.ArrayList;
 
 public class ProfileSetUpActivity extends AppCompatActivity {
 
-    private EditText fname;
-    private EditText lname;
-    private EditText phone;
-    private EditText dob;
+    private EditText dob,phone,fname,lname;
     private Button submit;
     private String email;
-
-    ArrayList<ProfileObject> profile;
     DatabaseReference mProfileDB;
 
     @Override
@@ -49,13 +44,10 @@ public class ProfileSetUpActivity extends AppCompatActivity {
     }
 
     public void sendProfile(){
-        String fn = fname.getText().toString().trim();
-        String ln = lname.getText().toString().trim();
-        String ph = phone.getText().toString().trim();
-        String db = dob.getText().toString().trim();
         mProfileDB = FirebaseDatabase.getInstance().getReference().child("user");
         String userId = mProfileDB.push().getKey();
-        ProfileObject profileObject = new ProfileObject(fn,ln,ph,db,email);
+        ProfileObject profileObject = new ProfileObject(fname.getText().toString().trim(),lname.getText().toString().trim(),
+                phone.getText().toString().trim(),dob.getText().toString().trim(),email);
         mProfileDB.child(userId).setValue(profileObject);
     }
 
