@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "819677979365",
+    "firebase_url": "https://medid-a1a84.firebaseio.com",
+    "project_id": "medid-a1a84",
+    "storage_bucket": "medid-a1a84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819677979365:android:0d0cf78b64a3e4a8",
+        "android_client_info": {
+          "package_name": "com.adarsh.medid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819677979365-citm8ddhujhkfa6avtpp050u5os3l2ls.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adarsh.medid",
+            "certificate_hash": "dd6a1a3243387ce34a77c5f238e50de32782d63b"
+          }
+        },
+        {
+          "client_id": "819677979365-97sdhp0r1f7c8ugom752ncf00v201if7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYODP6gQ7LIXys-0iBcwcKatF4ue41Knk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819677979365-97sdhp0r1f7c8ugom752ncf00v201if7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
