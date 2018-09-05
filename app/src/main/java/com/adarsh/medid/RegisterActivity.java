@@ -29,10 +29,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
 
-        buttonSignup = (Button) findViewById(R.id.buttonSignup);
+        buttonSignup = findViewById(R.id.buttonSignup);
 
         progressDialog = new ProgressDialog(this);
 
