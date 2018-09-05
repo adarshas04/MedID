@@ -1,5 +1,6 @@
 package com.adarsh.medid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -42,7 +43,9 @@ public class ProfileSetUpActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 sendProfile();
+                startActivity(new Intent(ProfileSetUpActivity.this,MedDetailActivity.class));
             }
         });
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddMedActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp">
+        <EditText
+            android:id="@+id/addMedName"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Enter Medicine Name" />
+
+        <EditText
+            android:id="@+id/addMedDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Medicine Description" />
+
+        <EditText
+            android:id="@+id/addMedQty"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Enter Medicine Qty" />
+        <Button
+            android:id="@+id/submitMed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"/>
+    </LinearLayout>
+
+</RelativeLayout>
