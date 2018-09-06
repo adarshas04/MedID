@@ -41,9 +41,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         firebaseAuth = FirebaseAuth.getInstance();
 
         if(firebaseAuth.getCurrentUser() != null){
-            finish();
-
             startActivity(new Intent(getApplicationContext(), ProfileSetUpActivity.class));
+            finish();
         }
 
 
@@ -83,6 +82,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         if(task.isSuccessful()){
                             //display some message here
                             Toast.makeText(RegisterActivity.this,"Successfully registered",Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(), ProfileSetUpActivity.class));
+                            finish();
                         }else{
                             //display some message here
                             Toast.makeText(RegisterActivity.this,"Registration Error",Toast.LENGTH_LONG).show();

@@ -29,7 +29,7 @@ public class AddMedActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mAddMed = FirebaseDatabase.getInstance().getReference().child("medicines");
                 String medID = mAddMed.push().getKey();
-                MedDetailObject medDetailObject = new MedDetailObject(addMedName.getText().toString(),addMedDesc.getText().toString(), /*Integer.parseInt(addMedQty.getText().toString())*/1);
+                MedDetailObject medDetailObject = new MedDetailObject(addMedName.getText().toString(),addMedDesc.getText().toString(), addMedQty.getText().toString());
                 mAddMed.child(medID).setValue(medDetailObject);
                 finish();
             }

@@ -1,76 +1,35 @@
 package com.adarsh.medid;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.ListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
+import com.bumptech.glide.Glide;
 
 public class MedDetailActivity extends AppCompatActivity {
 
-    ArrayList<MedDetailObject> matList = new ArrayList<>();
-    MedDetailAdapter adapter;
-    private ListView mListView;
-    private FloatingActionButton mFAB;
+    ImageView ivIcon;
+    TextView nameTV;
+    TextView descTV;
+    TextView qtyTV;
+    MedDetailObject medList;
+    String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_med_detail);
-        mListView = findViewById(R.id.listView1);
-        mFAB = findViewById(R.id.mFAB);
-        make();
+        ivIcon = findViewById(R.id.icon);
+        nameTV = findViewById(R.id.medName);
+        descTV = findViewById(R.id.medDesc);
+        qtyTV = findViewById(R.id.medQty);
+        url = "https://firebasestorage.googleapis.com/v0/b/medid-a1a84.appspot.com/o/med.jpg?alt=media&token=f369c541-e26a-4fa2-8157-3e017efdd030";
+        medList = (MedDetailObject) this.getIntent().getExtras().getParcelableArrayList("MedDetails");
+        nameTV.setText(medList.getMedName());
+        descTV.setText(medList.getMedDesc());
+        qtyTV.setText(medList.getMedQty());
 
-
-
-
-
-        Log.d("ankit",matList.toString());
-
-
-
-
-        /*adapter = new MedDetailAdapter(getApplicationContext(), matList);
-        mListView.setAdapter(adapter);*/
-        mFAB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MedDetailActivity.this,AddMedActivity.class));
-            }
-        });
-
+        Glide.with(getApplicationContext()).load(url).into(ivIcon);
     }
-
-    private void make(){
-        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
-        db.child("medicines").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.d("ankit","23wsdsadw");
-                for(DataSnapshot d : dataSnapshot.getChildren()){
-                    MedDetailObject med = new MedDetailObject();
-                    matList.add(d.getValue(MedDetailObject.class));
-                    System.out.println(d.getValue(MedDetailObject.class));
-                }
-                MedDetailAdapter adapter = new MedDetailAdapter(getApplicationContext(), R.layout.med_details, matList);
-                mListView.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
 }

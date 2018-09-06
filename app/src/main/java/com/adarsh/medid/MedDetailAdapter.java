@@ -30,7 +30,6 @@ public class MedDetailAdapter extends ArrayAdapter {
         contexts = mcontext;
         Names = NameParam;
         resourse1 = resourse;
-
         Log.d("ankit","Asdsad"+NameParam);
     }
 /*
@@ -90,6 +89,7 @@ public class MedDetailAdapter extends ArrayAdapter {
 
         name.setText(Names.get(position).getMedName());
         desc.setText(Names.get(position).getMedDesc());
+        qty.setText(Names.get(position).getMedQty());
         return matDets;
     }
 }

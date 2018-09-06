@@ -12,8 +12,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-
 public class ProfileSetUpActivity extends AppCompatActivity {
 
     private EditText dob,phone,fname,lname;
@@ -40,7 +38,7 @@ public class ProfileSetUpActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 sendProfile();
-                startActivity(new Intent(ProfileSetUpActivity.this,MedDetailActivity.class));
+                startActivity(new Intent(ProfileSetUpActivity.this,MedListActivity.class));
             }
         });
 

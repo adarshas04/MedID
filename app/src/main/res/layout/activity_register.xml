@@ -32,23 +32,4 @@
         android:text="Button"
         tools:text="Sign-Up"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_marginTop="10dp"
-        android:text="OR"
-        android:textAlignment="center"
-        android:textSize="24dp"
-        android:inputType="textPersonName"/>
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_marginTop = "20dp"
-        tools:text="Sign-In"/>
-
 </LinearLayout>
