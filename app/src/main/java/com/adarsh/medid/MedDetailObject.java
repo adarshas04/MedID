@@ -8,15 +8,16 @@ import java.util.stream.Stream;
 
 public class MedDetailObject extends ArrayList<Parcelable> implements Parcelable{
 
-    String medName, medDesc, medQty;
+    String medName, medDesc, medQty,user;
 
     public MedDetailObject() {
     }
 
-    public MedDetailObject(String medName, String medDesc, String medQty) {
+    public MedDetailObject(String medName, String medDesc, String medQty,String user) {
         this.medName = medName;
         this.medDesc = medDesc;
         this.medQty = medQty;
+        this.user = user;
     }
 
     protected MedDetailObject(Parcel in) {

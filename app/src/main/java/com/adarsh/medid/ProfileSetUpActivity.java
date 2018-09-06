@@ -49,7 +49,7 @@ public class ProfileSetUpActivity extends AppCompatActivity {
         String userId = mProfileDB.push().getKey();
         ProfileObject profileObject = new ProfileObject(fname.getText().toString().trim(),lname.getText().toString().trim(),
                 phone.getText().toString().trim(),dob.getText().toString().trim(),email);
-        mProfileDB.child(userId).setValue(profileObject);
+        mProfileDB.child(FirebaseAuth.getInstance().getUid()).setValue(profileObject);
     }
 
 }
