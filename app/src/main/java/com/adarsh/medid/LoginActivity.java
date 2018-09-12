@@ -41,9 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
 
-    // [START declare_auth]
     private FirebaseAuth mAuth;
-    // [END declare_auth]
 
     private GoogleSignInClient mGoogleSignInClient;
 
@@ -212,7 +210,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (v==signin) {
             signIn();
         }
-        // ...
+
         if (v==btn){
             userLogin();
         }

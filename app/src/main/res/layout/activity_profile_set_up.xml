@@ -7,17 +7,42 @@
     tools:context=".ProfileSetUpActivity"
     android:orientation="vertical">
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/user_types"
+        android:layout_margin="10dp"
+        android:entries="@array/User_types"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:id="@+id/place"
+        android:hint="Area to Serve In"
+        android:visibility="gone" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:id="@+id/store_name"
+        android:hint="Medical Store Name"
+        android:visibility="gone"/>
 
     <EditText
         android:id="@+id/editTextFName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:ems="10"
         android:hint="First Name"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editTextLName"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -26,6 +51,7 @@
 
     <EditText
         android:id="@+id/editTextPhone"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -34,6 +60,7 @@
 
     <EditText
         android:id="@+id/editTextDOB"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -43,6 +70,7 @@
     <Button
         android:id="@+id/submit"
         android:layout_width="match_parent"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content"
         android:text="Submit" />
 </LinearLayout>

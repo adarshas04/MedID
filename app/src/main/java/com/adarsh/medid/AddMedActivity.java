@@ -11,11 +11,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class AddMedActivity extends AppCompatActivity {
 
     private EditText addMedName, addMedDesc, addMedQty;
     private Button submit;
     DatabaseReference mAddMed;
+    ArrayList<MedDetailObject> mdo = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +33,14 @@ public class AddMedActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mAddMed = FirebaseDatabase.getInstance().getReference().child("medicines");
-                Log.d("yo", FirebaseAuth.getInstance().getUid());
-                MedDetailObject medDetailObject = new MedDetailObject(addMedName.getText().toString(),addMedDesc.getText().toString(), addMedQty.getText().toString(), "sdfsdf");
-                mAddMed.push().setValue(medDetailObject);
-                Log.d("yo",medDetailObject.medDesc);
+                Log.d("yoloo", FirebaseAuth.getInstance().getUid());
+                String name = addMedName.getText().toString();
+                String desc = addMedDesc.getText().toString();
+                String qty = addMedQty.getText().toString();
+                String mid = mAddMed.push().getKey();
+                Med a = new Med(name, desc, qty, mid);
+                Log.d("jsasaj","sac "+name+"sd "+desc+"sca "+qty);
+                mAddMed.child(mid).setValue(a);
                 finish();
             }
         });

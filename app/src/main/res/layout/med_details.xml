@@ -7,6 +7,7 @@
     <LinearLayout
         android:id="@+id/llayout1"
         android:layout_width="291dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -29,18 +30,46 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvQty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="20dp"
-        android:layout_marginLeft="15dp"
-        android:text="Qty"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="21sp" />
+    <RelativeLayout
+        android:id="@+id/llayout2"
+        android:layout_weight="10"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/decrease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:clickable="true"
+            android:layout_marginStart="11dp"
+            android:text="-"
+            android:textSize="45dp" />
+
+        <TextView
+            android:id="@+id/tvQty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="-62dp"
+            android:layout_toStartOf="@+id/increase"
+            android:text="00"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/increase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="71dp"
+            android:clickable="true"
+            android:text="+"
+            android:textSize="21sp" />
 
 
+    </RelativeLayout>
 
 </LinearLayout>

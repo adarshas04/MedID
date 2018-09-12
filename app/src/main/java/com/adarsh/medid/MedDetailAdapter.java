@@ -55,9 +55,9 @@ public class MedDetailAdapter extends ArrayAdapter {
                     MedDetailObject med = new MedDetailObject();
                     de.add(d.getValue(MedDetailObject.class));
                     if(de!=null){
-                        name.setText(med.getMedName());
-                        desc.setText(med.getMedDesc());
-                        qty.setText(med.getMedQty());
+                        name.setText(med.getName());
+                        desc.setText(med.getDesc());
+                        qty.setText(med.getQty());
                     }
                 }
             }
@@ -87,9 +87,9 @@ public class MedDetailAdapter extends ArrayAdapter {
         final TextView desc = matDets.findViewById(R.id.tvDesc);
         final TextView qty = matDets.findViewById(R.id.tvQty);
 
-        name.setText(Names.get(position).getMedName());
-        desc.setText(Names.get(position).getMedDesc());
-        qty.setText(Names.get(position).getMedQty());
+        name.setText(Names.get(position).getName());
+        desc.setText(Names.get(position).getDesc());
+        qty.setText(Names.get(position).getQty());
         return matDets;
     }
 }

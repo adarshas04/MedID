@@ -10,25 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".ProfileSetUpActivity" />
-        <activity android:name=".MedListActivity" />
         <activity
-            android:name=".AddMedActivity"
-            android:parentActivityName=".MedListActivity" />
+            android:name=".AddMedActivity" />
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".LoginActivity" />
         <activity android:name=".MedDetailActivity" />
         <activity
-            android:name=".NavDrawerActivity"
-            android:label="@string/title_activity_nav_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".MedListActivity"
+            android:label="MedID"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".CartActivity"/>
     </application>
 
 </manifest>

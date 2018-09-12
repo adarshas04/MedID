@@ -8,22 +8,21 @@ import java.util.stream.Stream;
 
 public class MedDetailObject extends ArrayList<Parcelable> implements Parcelable{
 
-    String medName, medDesc, medQty,user;
+    String name, desc, qty;
 
     public MedDetailObject() {
     }
 
-    public MedDetailObject(String medName, String medDesc, String medQty,String user) {
-        this.medName = medName;
-        this.medDesc = medDesc;
-        this.medQty = medQty;
-        this.user = user;
+    public MedDetailObject(String name, String desc, String qty) {
+        this.name = name;
+        this.desc = desc;
+        this.qty = qty;
     }
 
     protected MedDetailObject(Parcel in) {
-        medName = in.readString();
-        medDesc = in.readString();
-        medQty = in.readString();
+        name = in.readString();
+        desc = in.readString();
+        qty = in.readString();
     }
 
     public static final Creator<MedDetailObject> CREATOR = new Creator<MedDetailObject>() {
@@ -38,17 +37,17 @@ public class MedDetailObject extends ArrayList<Parcelable> implements Parcelable
         }
     };
 
-    public String getMedName() {
+    public String getName() {
 
-        return medName;
+        return name;
     }
 
-    public String getMedDesc() {
-        return medDesc;
+    public String getDesc() {
+        return desc;
     }
 
-    public String getMedQty() {
-        return medQty;
+    public String getQty() {
+        return qty;
     }
 
     @Override
@@ -58,9 +57,9 @@ public class MedDetailObject extends ArrayList<Parcelable> implements Parcelable
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(medName);
-        parcel.writeString(medDesc);
-        parcel.writeString(medQty);
+        parcel.writeString(name);
+        parcel.writeString(desc);
+        parcel.writeString(qty);
     }
 
     @Override
